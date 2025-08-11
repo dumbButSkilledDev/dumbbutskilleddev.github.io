@@ -3,5 +3,10 @@
   // tripleTry bug for securly
 
   var w = window.open();
-  w.window.open().window.open().document.write("test");
+
+  function tripleTry() {
+      w.document.write("if your seeing this the triple try exploit worked.");
+  }
+
+  setTimeout(tripleTry,1000);
 </script>
